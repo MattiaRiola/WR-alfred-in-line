@@ -1,0 +1,20 @@
+{
+  "name": "mywf",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "index.js",
+    "icon.png",
+    "info.plist"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alfy": "^0.12.2",
+    "wordreference-api": "^1.1.0"
+  }
+}
