@@ -44,10 +44,10 @@ if (from && to) {
 
 	if (wrResult.translations.length != 0) {
 		if (specifiedLanguage && reverse) {
-			output.push({
-				title: "requested translation not found but found translation from " + to + " to " + from,
-				icon: alfy.icon.alert
-			})
+			// output.push({
+			// 	title: "requested translation not found but found translation from " + to + " to " + from,
+			// 	icon: alfy.icon.alert
+			// })
 		}
 		mapTranslation(output, wrResult, reverse);
 	}
@@ -145,16 +145,16 @@ function readInput() {
  * @param {*} wrResult word reference response from api
  */
 function mapTranslation(results, wrResult) {
+	results.push({
+		title: '~~~~~~~~~~~ '  + from + " → " + to + ' ~~~~~~~~~~~',
+		quicklookurl: `https://www.wordreference.com/${from}${to}/${fromText}`,
+		icon: {
+			path: './icon_translation/' + from + to + '.png'
+		}
+	})
 	for (let index1 = 0; index1 < wrResult.translations.length; index1++) {
 		const outerTranslation = wrResult.translations[index1];
-		results.push({
-			title: '~~~~~~~~~~~' + outerTranslation.title + '~~~~~~~~~~~',
-			subtitle: "from " + from + " to " + to,
-			quicklookurl: `https://www.wordreference.com/${from}${to}/${fromText}`,
-			icon: {
-				path: './icon_translation/' + from + to + '.png'
-			}
-		})
+		
 		for (let index2 = 0; index2 < outerTranslation.translations.length; index2++) {
 			const innerTranslation = outerTranslation.translations[index2];
 			if (innerTranslation.example.from.length > 0) {
@@ -168,14 +168,14 @@ function mapTranslation(results, wrResult) {
 
 
 function pushTranslationWithExample(results, innerTranslation) {
-	results.push({
-		title: `from: ${langs[from]} to: ${langs[to]}`,
-		subtitle: EXAMPLE_SEPARATOR,
-		icon: {
-			path: './icon_translation/' + from + to + '.png'
-		}
+	// results.push({
+	// 	title: `from: ${langs[from]} to: ${langs[to]}`,
+	// 	subtitle: EXAMPLE_SEPARATOR,
+	// 	icon: {
+	// 		path: './icon_translation/' + from + to + '.png'
+	// 	}
 
-	});
+	// });
 	
 	results.push(
 		{
