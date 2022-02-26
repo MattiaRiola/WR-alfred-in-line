@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "alfy": "^0.12.2",
-    "wordreference-api": "^1.1.0"
+    "wordreference-api": "^1.1.0",
+    "configstore": "^2.0.0"
   }
 }
